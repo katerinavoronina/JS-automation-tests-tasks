@@ -6,7 +6,8 @@ let ALPHABET = [ALPHABET_UPPER_CASE, ALPHABET_LOWER_CASE, ALPHABET_CYRILLIC, NUM
 
 export function getRandomLowerCaseString() {
     let email = '';
-    while(email.length < 8) {
+    const stringLength = 8;
+    while(email.length < stringLength) {
         email += getRandomLetterFromString(ALPHABET_LOWER_CASE);
     }
     return email;
