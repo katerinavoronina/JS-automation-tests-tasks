@@ -24,12 +24,12 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('logInGamePage', (password, email, domain, domain2) => {
+Cypress.Commands.add('logInGamePage', (password, email, firstDomain, secondDomain) => {
     cy.get('input[placeholder="Choose Password"]').clear().type(password)
     cy.get('input[placeholder="Your email"]').clear().type(email)
-    cy.get('input[placeholder="Domain"]').clear().type(domain)
+    cy.get('input[placeholder="Domain"]').clear().type(firstDomain)
     cy.get('div.dropdown__field').click()
-    cy.get('div.dropdown__list').contains(domain2).click()
+    cy.get('div.dropdown__list').contains(secondDomain).click()
     cy.get('.checkbox__box').click()
 });
 
